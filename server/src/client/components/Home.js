@@ -6,7 +6,7 @@ const Home = () => {
             <div>
                 Home Component!
             </div>
-            <button onClick={() => alert("Hi!")}>Press me!</button>
+            <button onClick={() => alert("Hello!")}>Press me!</button>
         </Fragment>
     );
 };
