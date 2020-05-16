@@ -6,8 +6,6 @@ const config = {
     // Inform webpack we are building or nodejs, not for browser
     target: 'node',
 
-    mode: 'production',
-
     // Root of our application
     entry: './src/index.js',
 
