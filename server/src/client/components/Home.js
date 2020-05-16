@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const Home = () => {
     return (
-        <div>
-            Home Component
-        </div>
+        <Fragment>
+            <div>
+                Home Component!
+            </div>
+            <button onClick={() => alert("Hi!")}>Press me!</button>
+        </Fragment>
     );
 };
 
