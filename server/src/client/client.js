@@ -2,6 +2,12 @@
 
 import React from "react"
 import { render } from "react-dom"
-import Home from "./components/Home"
+import { BrowserRouter } from 'react-router-dom'
+import Routes from './Routes'
 
-render(<Home />, document.getElementById('root'))
+render(
+    <BrowserRouter>
+        <Routes />
+    </BrowserRouter>,
+    document.getElementById('root')
+)
