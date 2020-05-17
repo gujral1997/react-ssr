@@ -1,13 +1,22 @@
 // Startup point for client
 
 import React from "react"
-import { render } from "react-dom"
+import { hydrate } from "react-dom"
 import { BrowserRouter } from 'react-router-dom'
-import Routes from './Routes'
+import { Provider } from 'react-redux'
 
-render(
-    <BrowserRouter>
-        <Routes />
-    </BrowserRouter>,
+import Routes from './Routes'
+import reducers from "./reducers"
+import { applyMiddleware, createStore } from "redux"
+import thunk from "redux-thunk"
+
+const store = createStore(reducers, {}, applyMiddleware(thunk))
+
+hydrate(
+    <Provider store={store}>
+        <BrowserRouter>
+            <Routes />
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('root')
 )
