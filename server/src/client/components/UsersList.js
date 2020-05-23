@@ -15,8 +15,6 @@ class UsersList extends React.Component {
     }
 
     render() {
-        console.log(this.props.users);
-
         return (
             <div>
                 User List
@@ -31,5 +29,11 @@ class UsersList extends React.Component {
 const mapStateToProps = state => ({
     users: state.users
 })
+
+function loadData(store) {
+    return store.dispatch(fetchUsers())
+}
+
+export { loadData }
 
 export default connect(mapStateToProps, { fetchUsers })(UsersList)
