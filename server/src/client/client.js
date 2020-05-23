@@ -9,13 +9,14 @@ import Routes from './Routes'
 import reducers from "./reducers"
 import { applyMiddleware, createStore } from "redux"
 import thunk from "redux-thunk"
+import { renderRoutes } from "react-router-config"
 
 const store = createStore(reducers, {}, applyMiddleware(thunk))
 
 hydrate(
     <Provider store={store}>
         <BrowserRouter>
-            <Routes />
+            <div>{renderRoutes(Routes)}</div>
         </BrowserRouter>
     </Provider>,
     document.getElementById('root')
