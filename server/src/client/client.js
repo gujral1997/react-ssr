@@ -11,7 +11,7 @@ import { applyMiddleware, createStore } from "redux"
 import thunk from "redux-thunk"
 import { renderRoutes } from "react-router-config"
 
-const store = createStore(reducers, {}, applyMiddleware(thunk))
+const store = createStore(reducers, window.INITIAL_STATE, applyMiddleware(thunk))
 
 hydrate(
     <Provider store={store}>
