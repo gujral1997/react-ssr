@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchAdmins } from '../actions'
+import requireAuth from '../components/hocs/requireAuth';
 
 class AdminsList extends React.Component {
     componentDidMount() {
@@ -31,6 +32,6 @@ const mapStateToProps = state => ({
 })
 
 export default {
-    component: connect(mapStateToProps, { fetchAdmins })(AdminsList),
+    component: connect(mapStateToProps, { fetchAdmins })(requireAuth(AdminsList)),
     loadData: ({ dispatch }) => dispatch(fetchAdmins())
 }
